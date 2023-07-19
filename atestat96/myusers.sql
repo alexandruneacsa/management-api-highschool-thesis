@@ -42,19 +42,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `user` (`user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id_user`, `nume`, `prenume`, `email`, `centura`, `user`, `parola`, `data_adaugarii`) VALUES
-(1, 'Neacsa', 'Alexandru', 'alexneacsa14@gmail.com', 'neagra', 'nalexandru', '123445fsdhf', '2020-03-05 10:25:54'),
-(2, 'Florea', 'Rares', 'raresflorea67@gmail.com', 'alba', 'frares', 'qweasdzxc.', '2020-03-05 10:26:08'),
-(3, 'Pop', 'Vlad', 'vladpop75@gmail.com', 'albastra', 'pvlad', 'qwerewdsf', '2020-03-05 10:26:29'),
-(4, 'Zamfir', 'Razvan', 'razvanzamfir13@gmail.com', 'mov', 'zrazvan', '123ewdas', '2020-03-05 10:26:43'),
-(5, 'Bacescu', 'Ionut', 'bace08@gmail.com', 'alba', 'baceunicat', '4c1cb83221247cb71dc78ddf0f16ffa4', '2020-03-05 11:29:48'),
-(36, 'Neacsa', 'Eduard', 'aled7@gmail.com', 'alba', 'Edii', 'cc03e747a6afbbcbf8be7668acfebee5', '2020-03-05 11:29:56');
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

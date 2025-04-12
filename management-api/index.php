@@ -1,4 +1,4 @@
-<?php # index.php
+<?php #index.php
 $page_title = 'BJJ Club';
 $file_name = basename($_SERVER['PHP_SELF']);
 include ('./lib/header.php');

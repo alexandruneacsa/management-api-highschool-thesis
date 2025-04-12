@@ -3,8 +3,6 @@
 	<!-- End #site_content. --></div>
 	
 		<div id="footer">
-	         <p>Copyright &copy; Rio Grappling Club Pitești  </p>
+	         <p>Copyright &copy; Alexandru Neacsa - Evidenta unui club de BJJ </p>
 	   </div>
   <!-- End #main --></div>
-</body>
-</html>

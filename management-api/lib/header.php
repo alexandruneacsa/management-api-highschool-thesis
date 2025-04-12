@@ -1,8 +1,9 @@
 <?php
+global $page_title;
 function menu(array $options){
-	// generez meniu html pe baza unui array setand si clasa current pe optiunea selectata
-  	//global $file_name;
-	$file_name = basename($_SERVER['PHP_SELF']); // numele scriptului curent
+	//Generez meniu html pe baza unui array setand si clasa current pe optiunea selectata
+  	//Global $file_name;
+	$file_name = basename($_SERVER['PHP_SELF']); //Numele scriptului curent
   	$html = '';
   	foreach($options as $option=>$href){
   		$current = NULL;
@@ -12,9 +13,9 @@ function menu(array $options){
   		$html .= "\n";
   		$html .= '<li'.$current.'><a href="'.$href.'">'. ucfirst($option).'</a></li>';
   		$html .= "\n";
-  	} // end foreach
+  	} //End foreach
 return $html;
-} // end function
+} //End function
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -47,8 +48,6 @@ return $html;
 	        			echo menu($options);
 	        		?>
 	        </ul>
-	        
-	        
 	      </div>
 	    </div>
 	    

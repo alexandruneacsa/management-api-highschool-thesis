@@ -1,15 +1,16 @@
-<?php # inregistrare utilizator
+<?php #Inregistrare utilizator
+global $dbc;
 $page_title = 'Inregistrare';
 $file_name = basename($_SERVER['PHP_SELF']);
 include ('lib/header.php');
 ?>
 <h1>Inregistraza utilizator</h1>
 
-<?php # conectarea la baza de date; prelucrarea datelor
+<?php #Conectarea la baza de date; prelucrarea datelor
 require ('lib/connect.php');
 
 
-/* -- campurile formularului si atributele acestora --*/
+/* -- Campurile formularului si atributele acestora --*/
 $form_fields=  array( // fields
     'nume'        => array('obligatoriu'=>true, 'regex'=>'/^[a-zA-Z\-\s\']{2,20}$/'),
     'prenume'     => array('obligatoriu'=>true, 'regex'=>'/^[a-zA-Z\-\s\']{2,20}$/'),
@@ -20,22 +21,22 @@ $form_fields=  array( // fields
 	'centura'        => array('obligatoriu'=>true, 'regex'=>'/^[a-zA-Z\-\s\']{2,20}$/'),
     );
 
-/*-- pt. pastrarea datelor in formular, initializez $form_data pentru cazul in care formularul a fost afisat prima data-- */
+/*--Pentru pastrarea datelor in formular, initializez $form_data pentru cazul in care formularul a fost afisat prima data-- */
 foreach($form_fields as $field=>$atribute) {
 	$form_data[$field]='';
 }
 
 if(isset($_POST['submit'])){
 		
-	/*-- pastrarea datelor in formular; actualizare $form_data dupa apasarea butonului-- */	
+	/*--Pastrarea datelor in formular; actualizare $form_data dupa apasarea butonului-- */
 	$form_data=$_POST;
 			
-	/*--validare formular--*/ 
+	/*--Validare formular--*/
 	
-	//init errors; pentru un camp va fi semnalata o singura eroare
+	//Init errors; pentru un camp va fi semnalata o singura eroare
 	$errors = array();
 		
-	//verific campurile obligatorii si campuri cu format
+	//Verific campurile obligatorii si campuri cu format
 	foreach($form_fields as $field=>$atribute) {
 		
 		if(isset($atribute['obligatoriu']) && $atribute['obligatoriu'] === true) {//campul este obligatoriu
@@ -49,44 +50,41 @@ if(isset($_POST['submit'])){
 					$errors[] = "Campul $field nu este valid";
 					}
 			}
-		}//end foreach
+		}//End foreach
 
 	
-	/*--procesarea datelor sau afisare erorilor--*/
-	//print_r($errors);
-	if(!empty($errors)){//daca am erori, le afisez
+	/*--Procesarea datelor sau afisare erorilor--*/
+	if(!empty($errors)){ //Daca am erori, le afisez
 		echo '<div class="error">';
 		echo implode("<br />", $errors);
 		echo '</div>';
-	}else{//daca nu am erori, procesez datele
+	}else{ //Daca nu am erori, procesez datele
 		$nume=trim($form_data['nume']);
 		$prenume=trim($form_data['prenume']);
 		$user=trim($form_data['user']);
 		$parola=trim($form_data['parola']);
-		$parola_criptata = md5($parola);//in bd voi memora parola criptata; pentru securitate, se mai poate atasa parolei un string si apoi se aplica alg de criptare
+		$parola_criptata = md5($parola); //In db voi memora parola criptata; pentru securitate, se mai poate atasa parolei un string si apoi se aplica alg de criptare
 		$email=trim($form_data['email']);
 		$centura=trim($form_data['centura']);
 		//INSERT
 		$query="INSERT INTO users(nume, prenume, email, user, parola, data_adaugarii , centura)
 					VALUES('$nume','$prenume','$email','$user','$parola_criptata', NOW(),'$centura');";
-		//echo $query;//pt debug
-		
-		$result= @ mysqli_query($dbc,$query); // rulez interogarea
+
+		$result= @ mysqli_query($dbc,$query); //Rulez interogarea
 		
 		//verific INSERT		
-		if($result && mysqli_affected_rows($dbc)==1){ // INSERT ok; s-a adaugat o inregistrare
+		if($result && mysqli_affected_rows($dbc)==1){ //INSERT ok; s-a adaugat o inregistrare
 				echo '<h2>Multumim!</h2>
 					<p>Inregistrarea a fost realizata cu succes!</p>';
-				include ('lib/footer.php');//includ footer pt ca intrerup scriptul fortat; formularul si footerul care sunt dupa exit nu vor mai aparea in pagina
+				include ('lib/footer.php'); //Includ footer pt ca intrerup scriptul fortat; formularul si footerul care sunt dupa exit nu vor mai aparea in pagina
 				exit();
-				}else{//insert gresit sintactic sau neefectuat, de exemplu din motive de integritate 
+				}else{ //Insert gresit sintactic sau neefectuat, de exemplu din motive de integritate
 				echo '<p class="error">Insert nereusit!</p>';
 				echo '<p class="error"> Eroare de sistem: '. mysqli_error($dbc).'</p>';
 				}
-			//end INSERT
-		mysqli_close($dbc);//inchid conexiunea cu baza de date
-		}//end "nu am erori"
-		
+			//End INSERT
+		mysqli_close($dbc); //Inchid conexiunea cu baza de date
+		} //End "nu am erori"
 }
 
 ?>

@@ -1,39 +1,39 @@
 <?php
 	
 function array_to_table($arrays, $fields = array()){
-	// genereaza tabel html pe baza unei multimi de arrays php
+	//Genereaza tabel html pe baza unei multimi de arrays php
 	if(!is_array($arrays) || empty($arrays)) return '<p class="error">Date eronate!</p>';
-	
-	if($fields == NULL) $fields = array_keys($arrays[0]); // cheile primului array (titlu, autor, etc.), vor fi elementele antetului
-	//print_r($keys); // pt debug
+
+    //Cheile primului array (titlu, autor, etc.), vor fi elementele antetului
+	if($fields == NULL) $fields = array_keys($arrays[0]);
 	
 	//start tabel
 	$html = '<table class="table">';
 
-	//antet tabel
+	//Antet tabel
 	$html .= '<tr>';
 	foreach($fields as $v){
 		$html .= '<th>'. strtoupper($v).'</th>';	
 		}
 	$html .= '</tr>';
 
-	//date tabel
+	//Date tabel
 	foreach($arrays as $array){
-		//start tr
+		//Start tr
 		$html .= "\t".'<tr>';
-		// generez td-uri
+		//Generez td-uri
 		foreach($array as $field=>$v){
 			if(in_array($field, $fields)){
 				$html .= '<td>'.$v.'</td>';		
 				}
 		}	
-		//end tr
+		//End tr
 		$html .= '</tr>'."\n";
 		} 
 	
-	//end tabel
+	//End tabel
 	$html .= '</table>';
-	// returnez rezultat
+	//Returnez rezultat
 	return $html;
 	}
 	
@@ -46,5 +46,4 @@ function sort_array($arrays, $field){
 	);
 	return $arrays;
 	}
-	
 ?>

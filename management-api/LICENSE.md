@@ -1,3 +1,4 @@
+
 Proprietary License Agreement
 =============================
 
@@ -5,26 +6,35 @@ Copyright (c) 2020 Alexandru-Valentin Neacsa
 
 All rights reserved.
 
-This software repository and its contents (including, but not limited to, source code, configuration files, scripts, and documentation) are provided for **demonstration and educational purposes only**.
+This repository contains the source code and documentation for a **high school graduation project**, developed and submitted as part of the official curriculum.
 
-You are granted a **non-exclusive, non-transferable, revocable right** to view the contents of this repository **solely for personal and educational reference**.
+Purpose:
+--------
+The content of this repository is published **solely for demonstrative and educational purposes**.  
+It reflects the original work and effort of the author and is shared publicly to illustrate structure, code style, and project design.
 
-Strictly Prohibited:
----------------------
-- Copying or reproducing this code in whole or in part.
-- Modifying, editing, or creating derivative works based on this project.
-- Reusing any part of this code in other software, products, or projects.
-- Redistributing or publishing this code elsewhere.
-- Using this code in commercial or production environments.
+Usage Restrictions:
+-------------------
+You are NOT permitted to:
+- Copy or reproduce any part of this code
+- Modify or adapt this work into another project
+- Submit this work, in whole or in part, as your own in any academic or professional context
+- Use this project in commercial or public-facing applications
+- Distribute, publish, or mirror this code without written permission
 
-Restrictions apply regardless of whether the reuse is for public, private, academic, or commercial use.
-
-No License for Use or Redistribution:
--------------------------------------
-This repository is **not open source**.  
-No license is granted to use, reproduce, modify, or distribute the content beyond viewing it in this GitHub repository.
+This work is protected under intellectual property rights and academic integrity standards.
 
 Disclaimer of Warranty:
 ------------------------
-This software is provided “AS IS”, without any express or implied warranty.  
-In no event shall the author be held liable for any damages or losses arising from the use, misuse, or inability to use this software.
+This software is provided “AS IS”, without any warranty, express or implied.  
+The author assumes no responsibility for any outcomes resulting from the use of this material.
+
+Academic Notice:
+----------------
+Any unauthorized reuse of this work, especially in other atestat projects or school submissions, may be considered **plagiarism** and result in academic consequences.
+
+Contact:
+--------
+For permissions or questions, please contact:
+
+Alexandru-Valentin Neacsa
